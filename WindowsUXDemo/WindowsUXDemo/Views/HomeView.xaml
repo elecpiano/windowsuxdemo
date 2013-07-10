@@ -6,14 +6,282 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+	<Page.Resources>
+		
+		<Storyboard x:Name="ShowMenu">
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-1280">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-1280">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="-1280">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button1">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button2">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1280">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="1280">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button3">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button4">
+				<EasingDoubleKeyFrame KeyTime="0" Value="0">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+					<EasingDoubleKeyFrame.EasingFunction>
+						<CubicEase EasingMode="EaseInOut"/>
+					</EasingDoubleKeyFrame.EasingFunction>
+				</EasingDoubleKeyFrame>
+			</DoubleAnimationUsingKeyFrames>
+		</Storyboard>
+        <Storyboard x:Name="HideMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-1280">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button1">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-1280">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button2">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-1280">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="1">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button1">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="1">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button2">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="1">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button3">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1280">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateX)" Storyboard.TargetName="button4">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1280">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button3">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="1">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="button4">
+            	<EasingDoubleKeyFrame KeyTime="0" Value="1">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            	<EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0">
+            		<EasingDoubleKeyFrame.EasingFunction>
+            			<CubicEase EasingMode="EaseInOut"/>
+            		</EasingDoubleKeyFrame.EasingFunction>
+            	</EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </Page.Resources>
 
     <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
-        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Content="Animation Utility" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="animation"/>
-            <Button Content="Custom Popup" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="popup"/>
-            <Button Content="Radial Menu" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="radial"/>
-            <Button Content="Panorama" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="panorama"/>
-            <Button Content="Custom Reorder Panel" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="reorder"/>
+        <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
+            <Button x:Name="button" Content="Animation Utility" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="animation" Background="#FFDE5555" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            	<Button.RenderTransform>
+            		<CompositeTransform TranslateX="-1280"/>
+            	</Button.RenderTransform>
+            </Button>
+            <Button x:Name="button3" Content="Custom Popup" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="popup" Background="#FFEE9253" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            	<Button.RenderTransform>
+            		<CompositeTransform TranslateX="1280"/>
+            	</Button.RenderTransform>
+            </Button>
+            <Button x:Name="button1" Content="Radial Menu" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="radial" Background="#FFECD542" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            	<Button.RenderTransform>
+            		<CompositeTransform TranslateX="-1280"/>
+            	</Button.RenderTransform>
+            </Button>
+            <Button x:Name="button4" Content="Panorama" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="panorama" Background="#FF95CD52" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            	<Button.RenderTransform>
+            		<CompositeTransform TranslateX="1280"/>
+            	</Button.RenderTransform>
+            </Button>
+            <Button x:Name="button2" Content="Custom Reorder Panel" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="reorder" Background="#FF6F9FD8" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            	<Button.RenderTransform>
+            		<CompositeTransform TranslateX="-1280"/>
+            	</Button.RenderTransform>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

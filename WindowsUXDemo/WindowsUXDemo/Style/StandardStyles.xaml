@@ -1406,8 +1406,8 @@
 
     <Style x:Key="PageHeaderTextStyle" TargetType="TextBlock" BasedOn="{StaticResource HeaderTextStyle}">
         <Setter Property="TextWrapping" Value="NoWrap"/>
-        <Setter Property="VerticalAlignment" Value="Bottom"/>
-        <Setter Property="Margin" Value="0,0,30,40"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0"/>
     </Style>
 
     <Style x:Key="PageSubheaderTextStyle" TargetType="TextBlock" BasedOn="{StaticResource SubheaderTextStyle}">
@@ -1428,8 +1428,8 @@
         <Setter Property="MinWidth" Value="0"/>
         <Setter Property="Width" Value="48"/>
         <Setter Property="Height" Value="48"/>
-        <Setter Property="Margin" Value="36,0,36,36"/>
-        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="Margin" Value="36,0"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
         <Setter Property="FontFamily" Value="Segoe UI Symbol"/>
         <Setter Property="FontWeight" Value="Normal"/>
         <Setter Property="FontSize" Value="56"/>

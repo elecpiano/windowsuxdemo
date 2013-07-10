@@ -112,8 +112,20 @@
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\AnimationUtilityDemoView.xaml.cs">
-      <DependentUpon>AnimationUtilityDemoView.xaml</DependentUpon>
+    <Compile Include="Views\AnimationUtilityDemo.xaml.cs">
+      <DependentUpon>AnimationUtilityDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReorderPanelDemo.xaml.cs">
+      <DependentUpon>ReorderPanelDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\PanoramaDemo.xaml.cs">
+      <DependentUpon>PanoramaDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RadialMenuDemo.xaml.cs">
+      <DependentUpon>RadialMenuDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomPopupDemo.xaml.cs">
+      <DependentUpon>CustomPopupDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -145,9 +157,25 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Page>
-    <Page Include="Views\AnimationUtilityDemoView.xaml">
+    <Page Include="Views\AnimationUtilityDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReorderPanelDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\PanoramaDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\RadialMenuDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CustomPopupDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\HomeView.xaml">
       <SubType>Designer</SubType>
