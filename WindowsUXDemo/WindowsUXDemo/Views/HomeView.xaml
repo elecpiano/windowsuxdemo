@@ -1,0 +1,19 @@
+﻿<Page
+    x:Class="WindowsUXDemo.Views.HomeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowsUXDemo.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="Animation Utility" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="animation"/>
+            <Button Content="Custom Popup" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="popup"/>
+            <Button Content="Radial Menu" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="radial"/>
+            <Button Content="Panorama" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="panorama"/>
+            <Button Content="Custom Reorder Panel" Click="Menu_Click" Style="{StaticResource MenuButtonStyle}" Tag="reorder"/>
+        </StackPanel>
+    </Grid>
+</Page>
