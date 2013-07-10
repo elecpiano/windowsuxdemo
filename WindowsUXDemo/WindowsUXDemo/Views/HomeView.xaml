@@ -255,7 +255,7 @@
 
     </Page.Resources>
 
-    <Grid Background="{StaticResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Style="{StaticResource PageBase}">
         <StackPanel HorizontalAlignment="Stretch" VerticalAlignment="Center">
             <Button x:Name="button" Content="Animation Utility" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="animation" Background="#FFDE5555" RenderTransformOrigin="0.5,0.5" Opacity="0">
             	<Button.RenderTransform>

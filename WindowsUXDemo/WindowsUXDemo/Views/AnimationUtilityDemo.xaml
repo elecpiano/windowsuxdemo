@@ -35,7 +35,7 @@
 		</Storyboard>
     </Page.Resources>
 
-    <Grid>
+    <Grid Style="{StaticResource PageBase}">
         <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FFDE5555" RenderTransformOrigin="0.5,0.5" Opacity="1">
         	<Grid.RowDefinitions>
         		<RowDefinition Height="80"/>
@@ -50,6 +50,44 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Animation Utility" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
+        </Grid>
+        
+        <Grid x:Name="bodyPanel" Margin="0,120,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="400"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel VerticalAlignment="Center">
+                <Button x:Name="moveFromTo" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Move From To" Click="moveFromTo_Click"/>
+                <Button x:Name="moveTo" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Move To" Click="moveTo_Click"/>
+                <Button x:Name="moveBy" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Move By" Click="moveBy_Click"/>
+                <Button x:Name="moveCombo" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Move Combo" Click="moveCombo_Click"/>
+
+                <Button x:Name="scaleFromTo" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Scale From To" Click="scaleFromTo_Click"/>
+                <Button x:Name="scaleTo" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Scale To" Click="scaleTo_Click"/>
+
+                <Button x:Name="fade" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Fade" Click="fade_Click"/>
+
+                <Button x:Name="vibrateButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Vibrate" Click="vibrateButton_Click"/>
+
+            </StackPanel>
+            <Ellipse x:Name="ellipse" Grid.Column="1" Fill="#FFFFB3B3" Height="299" Width="299"  Stroke="Gray" StrokeThickness="24"/>
+            <Ellipse x:Name="ellipse1" Grid.Column="1" Fill="#FFFF7D69" Height="299" Width="299"  Stroke="Gray" StrokeThickness="24" RenderTransformOrigin="0.5,0.5">
+            	<Ellipse.RenderTransform>
+            		<CompositeTransform TranslateX="-310" TranslateY="-900"/>
+            	</Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse x:Name="ellipse2" Grid.Column="1" Fill="#FFFFF300" Height="299" Width="299"  Stroke="Gray" StrokeThickness="24" RenderTransformOrigin="0.5,0.5">
+            	<Ellipse.RenderTransform>
+            		<CompositeTransform TranslateY="900"/>
+            	</Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse x:Name="ellipse3" Grid.Column="1" Fill="#FF4BB8F5" Height="299" Width="299"  Stroke="Gray" StrokeThickness="24" RenderTransformOrigin="0.5,0.5">
+            	<Ellipse.RenderTransform>
+            		<CompositeTransform TranslateX="310" TranslateY="-900"/>
+            	</Ellipse.RenderTransform>
+            </Ellipse>
+
         </Grid>
         
     </Grid>

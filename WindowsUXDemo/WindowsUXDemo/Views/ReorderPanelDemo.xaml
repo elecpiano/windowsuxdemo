@@ -35,7 +35,7 @@
 		</Storyboard>
     </Page.Resources>
 
-    <Grid>
+    <Grid Style="{StaticResource PageBase}">
         <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF6F9FD8" RenderTransformOrigin="0.5,0.5" Opacity="1">
         	<Grid.RowDefinitions>
         		<RowDefinition Height="80"/>
@@ -51,6 +51,9 @@
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Reorder Panel" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
         </Grid>
-        
+
+        <Grid x:Name="bodyPanel" Margin="0,120,0,0">
+
+        </Grid>
     </Grid>
 </Page>

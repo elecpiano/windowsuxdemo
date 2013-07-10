@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
@@ -118,6 +119,13 @@ namespace Utility.Animations
                 double to_x, double to_y,
                 TimeSpan duration, Action<FrameworkElement> completed)
         {
+            CompositeTransform transform = cell.RenderTransform as CompositeTransform;
+            if (transform == null)
+            {
+                cell.RenderTransform = new CompositeTransform();
+                cell.RenderTransformOrigin = new Point(0.5, 0.5);
+            }
+
             cell.RenderTransform.SetValue(CompositeTransform.ScaleXProperty, from_x);
             cell.RenderTransform.SetValue(CompositeTransform.ScaleYProperty, from_y);
             this.InstanceScaleTo(cell, to_x, to_y, duration, completed);
@@ -150,6 +158,11 @@ namespace Utility.Animations
 
             /*value*/
             CompositeTransform transform = cell.RenderTransform as CompositeTransform;
+            if (transform == null)
+            {
+                cell.RenderTransform = transform = new CompositeTransform();
+                cell.RenderTransformOrigin = new Point(0.5, 0.5);
+            }
             _KeyFrame_x_from.Value = transform.ScaleX;
             _KeyFrame_x_to.Value = targetX;
             _KeyFrame_y_from.Value = transform.ScaleY;
@@ -165,13 +178,15 @@ namespace Utility.Animations
         {
             this.AnimationTarget.RenderTransform.SetValue(CompositeTransform.ScaleXProperty, TargetX);
             this.AnimationTarget.RenderTransform.SetValue(CompositeTransform.ScaleYProperty, TargetY);
+            if (!AnimationPool.Contains(this))
+            {
+                AnimationPool.Push(this);
+            }
 
             if (AnimationCompleted != null)
             {
                 AnimationCompleted(AnimationTarget);
             }
-
-            AnimationPool.Push(this);
         }
 
         #endregion

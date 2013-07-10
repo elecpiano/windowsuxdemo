@@ -98,11 +98,15 @@ namespace Utility.Animations
         private void _Storyboard_Completed(object sender, object e)
         {
             AnimationTarget.Opacity = TargetOpacity;
+            if (!AnimationPool.Contains(this))
+            {
+                AnimationPool.Push(this);
+            }
+
             if (AnimationCompleted != null)
             {
                 AnimationCompleted(AnimationTarget);
             }
-            AnimationPool.Push(this);
         }
 
         #endregion

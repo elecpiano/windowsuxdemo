@@ -6,7 +6,7 @@
    
 
     <Style x:Key="HorizontalMenuButtonStyle" TargetType="Button">
-        <Setter Property="FontSize" Value="32"/>
+        <Setter Property="FontSize" Value="36"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="Margin" Value="0,4"/>
         <Setter Property="Template">
@@ -88,6 +88,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+    </Style>
+
+    <Style x:Key="HorizontalSubMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource HorizontalMenuButtonStyle}">
+        <Setter Property="Background" Value="#FF646464"/>
+    </Style>
+
+    <Style x:Key="PageBase" TargetType="Grid">
+        <Setter Property="Background" Value="#FFF0F0F0"/>
     </Style>
     
 </ResourceDictionary>

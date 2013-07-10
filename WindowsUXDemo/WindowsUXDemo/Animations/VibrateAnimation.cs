@@ -15,11 +15,6 @@ namespace Utility.Animations
             Init();
         }
 
-        public static VibrateAnimation PickupAnimationNonPooling()
-        {
-            return new VibrateAnimation();
-        }
-
         #endregion
 
         #region Properties
@@ -112,10 +107,10 @@ namespace Utility.Animations
             AnimationTarget = cell;
             AnimationCompleted = completed;
 
-            CompositeTransform transform = AnimationTarget.RenderTransform as CompositeTransform;
+            CompositeTransform transform = cell.RenderTransform as CompositeTransform;
             if (transform==null)
             {
-                AnimationTarget.RenderTransform = new CompositeTransform();
+                cell.RenderTransform = new CompositeTransform();
             }
 
             if (_Storyboard == null)
@@ -135,13 +130,15 @@ namespace Utility.Animations
         private void _Storyboard_Completed(object sender, object e)
         {
             AnimationTarget.RenderTransform.SetValue(CompositeTransform.TranslateXProperty, 0d);
+            if (!AnimationPool.Contains(this))
+            {
+                AnimationPool.Push(this);
+            }
 
             if (AnimationCompleted != null)
             {
                 AnimationCompleted(AnimationTarget);
             }
-
-            AnimationPool.Push(this);
         }
 
         #endregion

@@ -15,11 +15,6 @@ namespace Utility.Animations
             Init();
         }
 
-        public static MoveAnimation PickupAnimationNonPooling()
-        {
-            return new MoveAnimation();
-        }
-
         #endregion
 
         #region Properties
@@ -156,6 +151,12 @@ namespace Utility.Animations
             double to_x, double to_y,
             TimeSpan duration, Action<FrameworkElement> completed)
         {
+            CompositeTransform transform = cell.RenderTransform as CompositeTransform;
+            if (transform == null)
+            {
+                cell.RenderTransform = new CompositeTransform();
+            }
+
             cell.RenderTransform.SetValue(CompositeTransform.TranslateXProperty, from_x);
             cell.RenderTransform.SetValue(CompositeTransform.TranslateYProperty, from_y);
             this.InstanceMoveTo(cell, to_x, to_y, duration, completed);
@@ -188,6 +189,10 @@ namespace Utility.Animations
 
             /*value*/
             CompositeTransform transform = cell.RenderTransform as CompositeTransform;
+            if (transform == null)
+            {
+                cell.RenderTransform = transform = new CompositeTransform();
+            }
             _KeyFrame_x_from.Value = transform.TranslateX;
             _KeyFrame_x_to.Value = x;
             _KeyFrame_y_from.Value = transform.TranslateY;
@@ -204,12 +209,15 @@ namespace Utility.Animations
             AnimationTarget.RenderTransform.SetValue(CompositeTransform.TranslateXProperty, TargetX);
             AnimationTarget.RenderTransform.SetValue(CompositeTransform.TranslateYProperty, TargetY);
 
+            if (!AnimationPool.Contains(this))
+            {
+                AnimationPool.Push(this);
+            }
+
             if (AnimationCompleted != null)
             {
                 AnimationCompleted(AnimationTarget);
             }
-
-            AnimationPool.Push(this);
         }
 
         #endregion
