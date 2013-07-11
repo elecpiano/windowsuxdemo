@@ -103,11 +103,11 @@
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Animations\AnimationBase.cs" />
-    <Compile Include="Animations\FadeAnimation.cs" />
-    <Compile Include="Animations\MoveAnimation.cs" />
-    <Compile Include="Animations\ScaleAnimation.cs" />
-    <Compile Include="Animations\VibrateAnimation.cs" />
+    <Compile Include="Utility\Animations\AnimationBase.cs" />
+    <Compile Include="Utility\Animations\FadeAnimation.cs" />
+    <Compile Include="Utility\Animations\MoveAnimation.cs" />
+    <Compile Include="Utility\Animations\ScaleAnimation.cs" />
+    <Compile Include="Utility\Animations\VibrateAnimation.cs" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

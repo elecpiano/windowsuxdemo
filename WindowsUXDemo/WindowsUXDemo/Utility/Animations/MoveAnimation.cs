@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
@@ -136,7 +137,7 @@ namespace Utility.Animations
             if (transform == null)
             {
                 cell.RenderTransform = transform = new CompositeTransform();
-                cell.RenderTransformOrigin = new Windows.Foundation.Point(0.5d, 0.5d);
+                cell.RenderTransformOrigin = new Point(0.5d, 0.5d);
             }
             var fromX = transform.TranslateX;
             var toX = fromX + x;
@@ -155,6 +156,7 @@ namespace Utility.Animations
             if (transform == null)
             {
                 cell.RenderTransform = new CompositeTransform();
+                cell.RenderTransformOrigin = new Point(0.5, 0.5);
             }
 
             cell.RenderTransform.SetValue(CompositeTransform.TranslateXProperty, from_x);

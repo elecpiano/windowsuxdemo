@@ -54,9 +54,9 @@ namespace WindowsUXDemo.Views
                         });
                 });
 
-            MoveAnimation.MoveFromTo(ellipse1, -310, -800, -310, 800, TimeSpan.FromSeconds(1), null);
-            MoveAnimation.MoveFromTo(ellipse2, 0, 800, 0, -800, TimeSpan.FromSeconds(1), null);
-            MoveAnimation.MoveFromTo(ellipse3, 310, -800, 310, 800, TimeSpan.FromSeconds(1), null);
+            //MoveAnimation.MoveFromTo(ellipse1, -310, -800, -310, 800, TimeSpan.FromSeconds(1), null);
+            //MoveAnimation.MoveFromTo(ellipse2, 0, 800, 0, -800, TimeSpan.FromSeconds(1), null);
+            //MoveAnimation.MoveFromTo(ellipse3, 310, -800, 310, 800, TimeSpan.FromSeconds(1), null);
         }
 
         private void scaleFromTo_Click(object sender, RoutedEventArgs e)
@@ -72,7 +72,8 @@ namespace WindowsUXDemo.Views
 
         private void fade_Click(object sender, RoutedEventArgs e)
         {
-            FadeAnimation.Fade(ellipse, 0, 1, TimeSpan.FromSeconds(1), null);
+            FadeAnimation.Fade(ellipse, 1, 0, TimeSpan.FromSeconds(0.5), 
+                fe=>FadeAnimation.Fade(ellipse, 0, 1, TimeSpan.FromSeconds(0.5),null));
         }
 
         private void vibrateButton_Click(object sender, RoutedEventArgs e)

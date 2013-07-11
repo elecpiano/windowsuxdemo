@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Windows.Foundation;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
@@ -111,6 +112,7 @@ namespace Utility.Animations
             if (transform==null)
             {
                 cell.RenderTransform = new CompositeTransform();
+                cell.RenderTransformOrigin = new Point(0.5, 0.5);
             }
 
             if (_Storyboard == null)
