@@ -101,11 +101,16 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Folder Include="Utility\Panorama\" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\BindableBase.cs" />
+    <Compile Include="Common\LayoutAwarePage.cs" />
+    <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="Controls\MyUserControl1.xaml.cs">
       <DependentUpon>MyUserControl1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\SampleDataSource.cs" />
     <Compile Include="Utility\Animations\AnimationBase.cs" />
     <Compile Include="Utility\Animations\FadeAnimation.cs" />
     <Compile Include="Utility\Animations\MoveAnimation.cs" />
@@ -119,6 +124,7 @@
       <DependentUpon>CoolPopupContainer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\CoolPopupContainer\CoolPopupContainerExtension.cs" />
+    <Compile Include="Utility\Panorama.cs" />
     <Compile Include="Utility\UIHelper.cs" />
     <Compile Include="Views\AnimationUtilityDemo.xaml.cs">
       <DependentUpon>AnimationUtilityDemo.xaml</DependentUpon>
@@ -146,6 +152,7 @@
     <None Include="WindowsUXDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Cloud.png" />
     <Content Include="Assets\Logo.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />

@@ -1,6 +1,10 @@
-﻿using Windows.UI.Xaml;
+﻿using System;
+using System.Collections.Generic;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
+using WindowsUXDemo.Data;
+using WindowsUXDemo.Utility;
 
 namespace WindowsUXDemo.Views
 {
@@ -9,11 +13,19 @@ namespace WindowsUXDemo.Views
         public PanoramaDemo()
         {
             this.InitializeComponent();
+            LoadSampleData();
+            panorama.AttachTo = itemGridView;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             ShowPageTitle.Begin();
+        }
+
+        private void LoadSampleData()
+        {
+            var sampleDataGroups = SampleDataSource.GetGroups("AllGroups");
+            this.DataContext = sampleDataGroups;
         }
 
         private void GoBack(object sender, RoutedEventArgs e)

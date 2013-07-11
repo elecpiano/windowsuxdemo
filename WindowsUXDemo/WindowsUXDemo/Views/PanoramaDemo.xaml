@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page xmlns:Utility="using:WindowsUXDemo.Utility" 
     x:Class="WindowsUXDemo.Views.PanoramaDemo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -6,44 +6,51 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-	<Page.Resources>
-		<Storyboard x:Name="ShowPageTitle">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="pageTitlePanel">
-				<EasingDoubleKeyFrame KeyTime="0" Value="-120">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pageTitlePanel">
-				<EasingDoubleKeyFrame KeyTime="0" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
+
+    <Page.Resources>
+        <Storyboard x:Name="ShowPageTitle">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="pageTitlePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-120">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pageTitlePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        
+        <CollectionViewSource
+            x:Name="groupedItemsViewSource"
+            Source="{Binding}"
+            IsSourceGrouped="true"
+            ItemsPath="TopItems"/>
     </Page.Resources>
 
     <Grid Style="{StaticResource PageBase}">
         <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF95CD52" RenderTransformOrigin="0.5,0.5" Opacity="1">
-        	<Grid.RowDefinitions>
-        		<RowDefinition Height="80"/>
-        		<RowDefinition Height="120"/>
-        	</Grid.RowDefinitions>
-        	<Grid.RenderTransform>
-        		<CompositeTransform TranslateY="-120"/>
-        	</Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <CompositeTransform TranslateY="-120"/>
+            </Grid.RenderTransform>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
@@ -53,6 +60,52 @@
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
+            <Utility:Panorama x:Name="panorama" >
+                <Image Source="ms-appx:///Assets/Cloud.png" Width="500" Margin="0,10,0,0" />
+                <Image Source="ms-appx:///Assets/Cloud.png" Width="500" Margin="0,150,0,0" />
+                <Image Source="ms-appx:///Assets/Cloud.png" Width="500" Margin="0,300,0,0" />
+            </Utility:Panorama>
+
+            <GridView Visibility="Visible"
+                x:Name="itemGridView"
+                AutomationProperties.AutomationId="ItemGridView"
+                AutomationProperties.Name="Grouped Items"
+                Grid.RowSpan="2"
+                Padding="116,49,40,49"
+                ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
+                ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
+                SelectionMode="None"
+                IsSwipeEnabled="false">
+
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Horizontal"/>
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+                <GridView.GroupStyle>
+                    <GroupStyle>
+                        <GroupStyle.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid Margin="1,0,0,6">
+                                    <Button
+                                    AutomationProperties.Name="Group Title"
+                                    Style="{StaticResource TextPrimaryButtonStyle}">
+                                        <StackPanel Orientation="Horizontal">
+                                            <TextBlock Text="{Binding Title}" Margin="3,-7,10,10" Style="{StaticResource GroupHeaderTextStyle}" />
+                                            <TextBlock Text="{StaticResource ChevronGlyph}" FontFamily="Segoe UI Symbol" Margin="0,-7,0,10" Style="{StaticResource GroupHeaderTextStyle}"/>
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </GroupStyle.HeaderTemplate>
+                        <GroupStyle.Panel>
+                            <ItemsPanelTemplate>
+                                <VariableSizedWrapGrid Orientation="Vertical" Margin="0,0,80,0"/>
+                            </ItemsPanelTemplate>
+                        </GroupStyle.Panel>
+                    </GroupStyle>
+                </GridView.GroupStyle>
+            </GridView>
 
         </Grid>
     </Grid>
