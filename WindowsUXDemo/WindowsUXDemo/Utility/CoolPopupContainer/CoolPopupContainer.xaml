@@ -1,0 +1,27 @@
+﻿<UserControl
+    x:Class="WindowsUXDemo.Utility.CoolPopupContainer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400">
+
+    <UserControl.Resources>
+
+
+    </UserControl.Resources>
+
+    <Grid x:Name="rootGrid" ManipulationMode="Scale" ManipulationDelta="RootGrid_ManipulationDelta">
+        <Rectangle x:Name="mask" Fill="#80FFFFFF" Opacity="0" Tapped="mask_Tapped"/>
+
+        <Grid x:Name="contentArea" VerticalAlignment="Center" HorizontalAlignment="Center" RenderTransformOrigin="0.5,0.5" Background="Red">
+            <Grid.RenderTransform>
+                <CompositeTransform/>
+            </Grid.RenderTransform>
+
+        </Grid>
+
+    </Grid>
+</UserControl>

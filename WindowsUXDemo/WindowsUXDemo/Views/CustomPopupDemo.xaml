@@ -1,4 +1,4 @@
-﻿<Page
+﻿<Page xmlns:Utility="using:WindowsUXDemo.Utility"  
     x:Class="WindowsUXDemo.Views.CustomPopupDemo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -54,8 +54,15 @@
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
-            
+            <Rectangle Fill="Green" Width="80" Height="60" Margin="0,0,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="Green" Width="80" Height="60" Margin="800,300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="Green" Width="80" Height="60" Margin="800,-300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="Green" Width="80" Height="60" Margin="-800,300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="Green" Width="80" Height="60" Margin="-800,-300,0,0" Tapped="item_Tapped"/>
+
         </Grid>
+        
+        <Utility:CoolPopupContainer x:Name="popupContainer"/>
         
     </Grid>
 </Page>
