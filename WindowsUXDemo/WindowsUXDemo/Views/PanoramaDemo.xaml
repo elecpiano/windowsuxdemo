@@ -61,9 +61,14 @@
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
             <Utility:Panorama x:Name="panorama" >
-                <Image Source="ms-appx:///Assets/Cloud.png" Width="500" Margin="0,10,0,0" />
-                <Image Source="ms-appx:///Assets/Cloud.png" Width="500" Margin="0,150,0,0" />
-                <Image Source="ms-appx:///Assets/Cloud.png" Width="500" Margin="0,300,0,0" />
+                <Grid>
+                    <Image Source="ms-appx:///Assets/Cloud1.png" Stretch="None" VerticalAlignment="Bottom"/>
+                    <Image Source="ms-appx:///Assets/Cloud4.png" Stretch="None" VerticalAlignment="Top"/>
+                </Grid>
+                <Grid>
+                    <Image Source="ms-appx:///Assets/Cloud2.png" Stretch="None" VerticalAlignment="Bottom"/>
+                    <Image Source="ms-appx:///Assets/Cloud3.png" Stretch="None" VerticalAlignment="Top"/>
+                </Grid>
             </Utility:Panorama>
 
             <GridView Visibility="Visible"

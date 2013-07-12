@@ -101,7 +101,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="Utility\Panorama\" />
     <Folder Include="Utility\ReorderPanel\" />
   </ItemGroup>
   <ItemGroup>
@@ -125,8 +124,7 @@
       <DependentUpon>CoolPopupContainer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\CoolPopupContainer\CoolPopupContainerExtension.cs" />
-    <Compile Include="Utility\ImageButton.cs" />
-    <Compile Include="Utility\Panorama.cs" />
+    <Compile Include="Utility\Panorama\Panorama.cs" />
     <Compile Include="Utility\UIHelper.cs" />
     <Compile Include="Utility\XGridView\DrawableComponent.cs" />
     <Compile Include="Utility\XGridView\XGridView.cs" />
@@ -161,9 +159,11 @@
     <None Include="WindowsUXDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Cloud.png" />
+    <Content Include="Assets\Cloud1.png" />
+    <Content Include="Assets\Cloud2.png" />
+    <Content Include="Assets\Cloud3.png" />
+    <Content Include="Assets\Cloud4.png" />
     <Content Include="Assets\Logo.png" />
-    <Content Include="Assets\RemoveButton.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />

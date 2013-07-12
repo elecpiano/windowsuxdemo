@@ -57,7 +57,7 @@ namespace Utility
         ScrollViewer _ScrollViewer;
         private void scrollViewer_ViewChanged(object sender, ScrollViewerViewChangedEventArgs e)
         {
-            var delta = (_ScrollViewer.HorizontalOffset / _ScrollViewer.ScrollableWidth) * 800;
+            var delta = (_ScrollViewer.HorizontalOffset / _ScrollViewer.ScrollableWidth) * 1200;
             UpdateOffset(delta);
         }
 
@@ -68,6 +68,10 @@ namespace Utility
             {
                 return;
             }
+
+            fe.HorizontalAlignment = Windows.UI.Xaml.HorizontalAlignment.Left;
+            fe.Margin = new Thickness(0, 0, -99999, 0);
+
             CompositeTransform transform = fe.RenderTransform as CompositeTransform;
             if (transform == null)
             {
