@@ -60,6 +60,12 @@
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
+        	<Grid.Background>
+        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+        			<GradientStop Color="#FF65A2B0" Offset="1"/>
+        			<GradientStop Color="#FFBCD7DE"/>
+        		</LinearGradientBrush>
+        	</Grid.Background>
             <Utility:Panorama x:Name="panorama" >
                 <Grid>
                     <Image Source="ms-appx:///Assets/Cloud1.png" Stretch="None" VerticalAlignment="Bottom"/>
