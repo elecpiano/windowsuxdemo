@@ -102,7 +102,7 @@ namespace Utility
             set { SetValue(ItemWidthProperty, value); }
         }
         public static readonly DependencyProperty ItemWidthProperty =
-            DependencyProperty.Register("ItemWidth", typeof(double), typeof(XGridViewPanel), new PropertyMetadata(220d));
+            DependencyProperty.Register("ItemWidth", typeof(double), typeof(XGridViewPanel), new PropertyMetadata(160d));
 
         public double ItemHeight
         {
@@ -110,7 +110,7 @@ namespace Utility
             set { SetValue(ItemHeightProperty, value); }
         }
         public static readonly DependencyProperty ItemHeightProperty =
-            DependencyProperty.Register("ItemHeight", typeof(double), typeof(XGridViewPanel), new PropertyMetadata(220d));
+            DependencyProperty.Register("ItemHeight", typeof(double), typeof(XGridViewPanel), new PropertyMetadata(160d));
 
         #endregion
 

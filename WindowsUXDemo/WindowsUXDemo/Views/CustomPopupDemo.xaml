@@ -54,11 +54,11 @@
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
-            <Rectangle Fill="Green" Width="80" Height="60" Margin="0,0,0,0" Tapped="item_Tapped"/>
-            <Rectangle Fill="Green" Width="80" Height="60" Margin="800,300,0,0" Tapped="item_Tapped"/>
-            <Rectangle Fill="Green" Width="80" Height="60" Margin="800,-300,0,0" Tapped="item_Tapped"/>
-            <Rectangle Fill="Green" Width="80" Height="60" Margin="-800,300,0,0" Tapped="item_Tapped"/>
-            <Rectangle Fill="Green" Width="80" Height="60" Margin="-800,-300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="#FFEE9253" Width="80" Height="60" Margin="0,0,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="#FFEE9253" Width="80" Height="60" Margin="800,300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="#FFEE9253" Width="80" Height="60" Margin="800,-300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="#FFEE9253" Width="80" Height="60" Margin="-800,300,0,0" Tapped="item_Tapped"/>
+            <Rectangle Fill="#FFEE9253" Width="80" Height="60" Margin="-800,-300,0,0" Tapped="item_Tapped"/>
 
         </Grid>
         

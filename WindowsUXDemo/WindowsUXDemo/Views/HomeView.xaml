@@ -267,17 +267,17 @@
             		<CompositeTransform TranslateX="1280"/>
             	</Button.RenderTransform>
             </Button>
-            <Button x:Name="button1" Content="Radial Menu" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="radial" Background="#FFECD542" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Button x:Name="button1" Content="Panorama" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="panorama" Background="#FFECD542" RenderTransformOrigin="0.5,0.5" Opacity="0">
             	<Button.RenderTransform>
             		<CompositeTransform TranslateX="-1280"/>
             	</Button.RenderTransform>
             </Button>
-            <Button x:Name="button4" Content="Panorama" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="panorama" Background="#FF95CD52" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Button x:Name="button4" Content="Custom Reorder Panel" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="reorder" Background="#FF95CD52" RenderTransformOrigin="0.5,0.5" Opacity="0">
             	<Button.RenderTransform>
             		<CompositeTransform TranslateX="1280"/>
             	</Button.RenderTransform>
             </Button>
-            <Button x:Name="button2" Content="Custom Reorder Panel" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="reorder" Background="#FF6F9FD8" RenderTransformOrigin="0.5,0.5" Opacity="0">
+            <Button x:Name="button2" Content="Summary" Click="Menu_Click" Style="{StaticResource HorizontalMenuButtonStyle}" Tag="summary" Background="#FF6F9FD8" RenderTransformOrigin="0.5,0.5" Opacity="0">
             	<Button.RenderTransform>
             		<CompositeTransform TranslateX="-1280"/>
             	</Button.RenderTransform>

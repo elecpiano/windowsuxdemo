@@ -28,7 +28,7 @@ namespace WindowsUXDemo.Views
             ObservableCollection<int> items1 = new ObservableCollection<int>();
             ObservableCollection<int> items2 = new ObservableCollection<int>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 9; i++)
             {
                 items1.Add(i);
                 items2.Add(i);

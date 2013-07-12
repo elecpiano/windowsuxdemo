@@ -33,14 +33,14 @@ namespace WindowsUXDemo.Views
                 case "popup":
                     this.Frame.Navigate(typeof(CustomPopupDemo));
                     break;
-                case "radial":
-                    this.Frame.Navigate(typeof(RadialMenuDemo));
-                    break;
                 case "panorama":
                     this.Frame.Navigate(typeof(PanoramaDemo));
                     break;
                 case "reorder":
                     this.Frame.Navigate(typeof(ReorderPanelDemo));
+                    break;
+                case "summary":
+                    this.Frame.Navigate(typeof(Summary));
                     break;
             }
         }

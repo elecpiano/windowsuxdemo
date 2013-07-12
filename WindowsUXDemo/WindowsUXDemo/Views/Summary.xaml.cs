@@ -4,9 +4,9 @@ using Windows.UI.Xaml.Navigation;
 
 namespace WindowsUXDemo.Views
 {
-    public sealed partial class RadialMenuDemo : Page
+    public sealed partial class Summary : Page
     {
-        public RadialMenuDemo()
+        public Summary()
         {
             this.InitializeComponent();
         }

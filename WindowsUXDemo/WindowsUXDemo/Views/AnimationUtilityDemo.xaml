@@ -33,6 +33,10 @@
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+
+        <Style x:Key="HorizontalSubMenuButtonStyle" TargetType="Button" BasedOn="{StaticResource HorizontalMenuButtonStyle}">
+            <Setter Property="Background" Value="#FF646464"/>
+        </Style>
     </Page.Resources>
 
     <Grid Style="{StaticResource PageBase}">

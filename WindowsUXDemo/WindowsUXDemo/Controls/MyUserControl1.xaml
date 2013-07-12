@@ -9,7 +9,7 @@
     Height="300"
     Width="400">
 
-    <Grid Background="Green">
+    <Grid Background="#FFEE9253">
         <Button Style="{StaticResource ContentButtonStyle}" Click="CloseButton_Click" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,-20,-20,0" >
             <Grid >
                 <Ellipse Width="50" Height="50" Fill="Maroon" />

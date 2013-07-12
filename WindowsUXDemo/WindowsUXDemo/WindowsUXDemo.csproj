@@ -101,7 +101,6 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="Utility\ReorderPanel\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BindableBase.cs" />
@@ -133,17 +132,14 @@
     <Compile Include="Views\AnimationUtilityDemo.xaml.cs">
       <DependentUpon>AnimationUtilityDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\OldGridViewDemo.xaml.cs">
-      <DependentUpon>OldGridViewDemo.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\ReorderPanelDemo.xaml.cs">
       <DependentUpon>ReorderPanelDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\PanoramaDemo.xaml.cs">
       <DependentUpon>PanoramaDemo.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\RadialMenuDemo.xaml.cs">
-      <DependentUpon>RadialMenuDemo.xaml</DependentUpon>
+    <Compile Include="Views\Summary.xaml.cs">
+      <DependentUpon>Summary.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomPopupDemo.xaml.cs">
       <DependentUpon>CustomPopupDemo.xaml</DependentUpon>
@@ -159,7 +155,6 @@
     <None Include="WindowsUXDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Beam.png" />
     <Content Include="Assets\Cloud1.png" />
     <Content Include="Assets\Cloud2.png" />
     <Content Include="Assets\Cloud3.png" />
@@ -168,6 +163,7 @@
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\SunShine.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -195,10 +191,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\OldGridViewDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="Views\ReorderPanelDemo.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -207,7 +199,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Views\RadialMenuDemo.xaml">
+    <Page Include="Views\Summary.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

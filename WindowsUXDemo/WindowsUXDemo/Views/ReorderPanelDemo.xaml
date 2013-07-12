@@ -7,66 +7,77 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Utility="using:Utility" 
     mc:Ignorable="d">
-	<Page.Resources>
-		<Storyboard x:Name="ShowPageTitle">
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="pageTitlePanel">
-				<EasingDoubleKeyFrame KeyTime="0" Value="-120">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-			<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pageTitlePanel">
-				<EasingDoubleKeyFrame KeyTime="0" Value="0">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-				<EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
-					<EasingDoubleKeyFrame.EasingFunction>
-						<BackEase/>
-					</EasingDoubleKeyFrame.EasingFunction>
-				</EasingDoubleKeyFrame>
-			</DoubleAnimationUsingKeyFrames>
-		</Storyboard>
-        <DataTemplate x:Key="MyItemTemplate">
-            <Grid Width="200" Height="200" Background="#80000000" Margin="10">
+    <Page.Resources>
+        <Storyboard x:Name="ShowPageTitle">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.TranslateY)" Storyboard.TargetName="pageTitlePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-120">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="pageTitlePanel">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1">
+                    <EasingDoubleKeyFrame.EasingFunction>
+                        <BackEase/>
+                    </EasingDoubleKeyFrame.EasingFunction>
+                </EasingDoubleKeyFrame>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <DataTemplate x:Key="MyItemTemplate1">
+            <Grid Width="140" Height="140" Background="#80000000" Margin="10">
+                <TextBlock Text="{Binding}" FontSize="90" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="MyItemTemplate2">
+            <Grid Width="140" Height="140" Background="#FF95CD52" Margin="10">
                 <TextBlock Text="{Binding}" FontSize="90" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             </Grid>
         </DataTemplate>
     </Page.Resources>
 
     <Grid Style="{StaticResource PageBase}">
-        <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF6F9FD8" RenderTransformOrigin="0.5,0.5" Opacity="1">
-        	<Grid.RowDefinitions>
-        		<RowDefinition Height="80"/>
-        		<RowDefinition Height="120"/>
-        	</Grid.RowDefinitions>
-        	<Grid.RenderTransform>
-        		<CompositeTransform TranslateY="-120"/>
-        	</Grid.RenderTransform>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Reorder Panel" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
-        </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="520"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
 
-            <GridView x:Name="oldListView" ItemTemplate="{StaticResource MyItemTemplate}" AllowDrop="True" CanDragItems="True" CanReorderItems="True" Grid.Column="0"/>
-            <Utility:XGridView x:Name="xListView" ItemTemplate="{StaticResource MyItemTemplate}" IsInSettingMode="True" Grid.Column="1"/>
+            <GridView x:Name="oldListView" ItemTemplate="{StaticResource MyItemTemplate1}" AllowDrop="True" CanDragItems="True" CanReorderItems="True" Grid.Column="0" Grid.Row="1"/>
+            <Utility:XGridView x:Name="xListView" ItemTemplate="{StaticResource MyItemTemplate2}" IsInSettingMode="True" Grid.Column="1" Grid.Row="1"/>
 
+        </Grid>
+
+        <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF95CD52" RenderTransformOrigin="0.5,0.5" Opacity="1">
+            <Grid.RenderTransform>
+                <CompositeTransform TranslateY="-120"/>
+            </Grid.RenderTransform>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Reorder Panel" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
         </Grid>
     </Grid>
 </Page>

@@ -34,131 +34,50 @@
                 </EasingDoubleKeyFrame>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
-        
+
+        <Storyboard x:Name="SunshineStory" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="sunshine">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:8" Value="-360"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
         <CollectionViewSource
             x:Name="groupedItemsViewSource"
             Source="{Binding}"
             IsSourceGrouped="true"
             ItemsPath="TopItems"/>
-        <Storyboard x:Name="SunshineStory" RepeatBehavior="Forever">
-        	<DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(CompositeTransform.Rotation)" Storyboard.TargetName="sunshine">
-        		<EasingDoubleKeyFrame KeyTime="0" Value="0"/>
-        		<EasingDoubleKeyFrame KeyTime="0:0:8" Value="-360"/>
-        	</DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+
+        <DataTemplate x:Name="gridViewItemTemplate">
+            <Grid Width="175" Height="175">
+                <Border BorderBrush="#A0FFFFFF" BorderThickness="8">
+                    <Grid Background="#80ECD542"/>
+                </Border>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Grid Style="{StaticResource PageBase}">
-        <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF95CD52" RenderTransformOrigin="0.5,0.5" Opacity="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="80"/>
-                <RowDefinition Height="120"/>
-            </Grid.RowDefinitions>
-            <Grid.RenderTransform>
-                <CompositeTransform TranslateY="-120"/>
-            </Grid.RenderTransform>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Panorama" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
-        </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
-        	<Grid.Background>
-        		<LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-        			<GradientStop Color="#FF65A2B0" Offset="1"/>
-        			<GradientStop Color="#FFBCD7DE"/>
-        		</LinearGradientBrush>
-        	</Grid.Background>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF99CEDA" Offset="1"/>
+                    <GradientStop Color="#FFD5F0F7"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
             <Utility:Panorama x:Name="panorama" >
-                <Grid x:Name="sunshine" Height="1000" Width="1000" Margin="200,0,-200,0" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" >
-                    <Grid.RenderTransform>
-                        <CompositeTransform ScaleX="1.5" ScaleY="1.5" TranslateY="200"/>
-                    </Grid.RenderTransform>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" Height="500" Width="100">
-                        <Image.RenderTransform>
-                            <CompositeTransform TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="24" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="48" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="72" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="96" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="120" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="144" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="168" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="192" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="216" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="240" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="264" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="288" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="312" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                    <Image Source="ms-appx:///Assets/Beam.png" Stretch="None" RenderTransformOrigin="0.5,1" UseLayoutRounding="False" d:LayoutRounding="Auto">
-                        <Image.RenderTransform>
-                            <CompositeTransform Rotation="336" TranslateY="-250"/>
-                        </Image.RenderTransform>
-                    </Image>
-                </Grid>
-                <Grid>
+                <Image x:Name="sunshine" Source="ms-appx:///Assets/SunShine.png" Margin="200,0,-200,0" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5" >
+                    <Image.RenderTransform>
+                        <CompositeTransform ScaleX="2" ScaleY="2" TranslateY="200"/>
+                    </Image.RenderTransform>
+                </Image>
+                <Grid HorizontalAlignment="Left" Margin="0,0,-99999,0">
                     <Image Source="ms-appx:///Assets/Cloud1.png" Stretch="None" VerticalAlignment="Bottom"/>
                     <Image Source="ms-appx:///Assets/Cloud4.png" Stretch="None" VerticalAlignment="Top"/>
                 </Grid>
-                <Grid>
+                <Grid HorizontalAlignment="Left" Margin="0,0,-99999,0">
                     <Image Source="ms-appx:///Assets/Cloud2.png" Stretch="None" VerticalAlignment="Bottom"/>
                     <Image Source="ms-appx:///Assets/Cloud3.png" Stretch="None" VerticalAlignment="Top"/>
                 </Grid>
@@ -168,7 +87,7 @@
                 x:Name="itemGridView"
                 Padding="116,49,40,49"
                 ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
-                ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
+                ItemTemplate="{StaticResource gridViewItemTemplate}"
                 SelectionMode="None"
                 IsSwipeEnabled="false">
 
@@ -186,8 +105,7 @@
                                     AutomationProperties.Name="Group Title"
                                     Style="{StaticResource TextPrimaryButtonStyle}">
                                         <StackPanel Orientation="Horizontal">
-                                            <TextBlock Text="{Binding Title}" Margin="3,-7,10,10" Style="{StaticResource GroupHeaderTextStyle}" />
-                                            <TextBlock Text="{StaticResource ChevronGlyph}" FontFamily="Segoe UI Symbol" Margin="0,-7,0,10" Style="{StaticResource GroupHeaderTextStyle}"/>
+                                            <TextBlock Text="{Binding Title}" FontSize="30" FontWeight="SemiBold" Foreground="#80000000" />
                                         </StackPanel>
                                     </Button>
                                 </Grid>
@@ -201,7 +119,22 @@
                     </GroupStyle>
                 </GridView.GroupStyle>
             </GridView>
+        </Grid>
 
+        <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FFECD542" RenderTransformOrigin="0.5,0.5" Opacity="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Grid.RenderTransform>
+                <CompositeTransform TranslateY="-120"/>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Panorama" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
         </Grid>
     </Grid>
 </Page>
