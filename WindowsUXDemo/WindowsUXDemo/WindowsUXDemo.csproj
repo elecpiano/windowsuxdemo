@@ -159,6 +159,7 @@
     <None Include="WindowsUXDemo_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Beam.png" />
     <Content Include="Assets\Cloud1.png" />
     <Content Include="Assets\Cloud2.png" />
     <Content Include="Assets\Cloud3.png" />
