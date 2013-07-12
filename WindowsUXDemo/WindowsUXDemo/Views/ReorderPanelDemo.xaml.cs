@@ -20,5 +20,20 @@ namespace WindowsUXDemo.Views
         {
             this.Frame.GoBack();
         }
+
+        private void oldGridViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(OldGridViewDemo));
+        }
+
+        private void coolListViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CoolListViewDemo));
+        }
+
+        private void coolGridViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(CoolGridViewDemo));
+        }
     }
 }

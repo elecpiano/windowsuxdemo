@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="WindowsUXDemo.Views.ReorderPanelDemo"
+    x:Class="WindowsUXDemo.Views.OldGridViewDemo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WindowsUXDemo.Views"
@@ -33,10 +33,15 @@
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+        <DataTemplate x:Key="gridViewItemTemplate">
+            <Grid Width="200" Height="200" Background="#80000000">
+                <TextBlock Text="{Binding}" FontSize="90" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Grid Style="{StaticResource PageBase}">
-        <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF6F9FD8" RenderTransformOrigin="0.5,0.5" Opacity="1">
+        <Grid x:Name="pageTitlePanel" VerticalAlignment="Top" Height="200" Margin="0,-80,0,0" Background="#FF646464" RenderTransformOrigin="0.5,0.5" Opacity="1">
         	<Grid.RowDefinitions>
         		<RowDefinition Height="80"/>
         		<RowDefinition Height="120"/>
@@ -49,16 +54,17 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Reorder Panel" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Old Ugly GridView" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
-            <StackPanel VerticalAlignment="Center">
-                <Button x:Name="oldGridViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Old Ugly GridView" Click="oldGridViewButton_Click"/>
-                <Button x:Name="coolListViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Cool ListView" Background="#FF6F9FD8" Click="coolListViewButton_Click"/>
-                <Button x:Name="coolGridViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Cool GridView" Background="#FF6F9FD8" Click="coolGridViewButton_Click"/>
-            </StackPanel>
-
+            <GridView x:Name="gridView"
+                      Padding="116,49,40,49"
+                      ItemTemplate="{StaticResource gridViewItemTemplate}"
+                      AllowDrop="True"
+                      CanDragItems="True"
+                      CanReorderItems="True">
+            </GridView>
         </Grid>
     </Grid>
 </Page>

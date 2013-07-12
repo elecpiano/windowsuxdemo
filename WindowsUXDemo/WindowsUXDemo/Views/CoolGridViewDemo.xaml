@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="WindowsUXDemo.Views.ReorderPanelDemo"
+    x:Class="WindowsUXDemo.Views.CoolGridViewDemo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:WindowsUXDemo.Views"
@@ -49,15 +49,11 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}" Grid.Row="1"/>
-            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Reorder Panel" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
+            <TextBlock x:Name="pageTitle" Grid.Column="1" Text="Cool GridView" Style="{StaticResource PageHeaderTextStyle}" Grid.Row="1"/>
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
-            <StackPanel VerticalAlignment="Center">
-                <Button x:Name="oldGridViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Old Ugly GridView" Click="oldGridViewButton_Click"/>
-                <Button x:Name="coolListViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Cool ListView" Background="#FF6F9FD8" Click="coolListViewButton_Click"/>
-                <Button x:Name="coolGridViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Cool GridView" Background="#FF6F9FD8" Click="coolGridViewButton_Click"/>
-            </StackPanel>
+
 
         </Grid>
     </Grid>

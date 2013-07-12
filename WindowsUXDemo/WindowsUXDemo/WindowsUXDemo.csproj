@@ -102,6 +102,7 @@
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
     <Folder Include="Utility\Panorama\" />
+    <Folder Include="Utility\ReorderPanel\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\BindableBase.cs" />
@@ -128,6 +129,15 @@
     <Compile Include="Utility\UIHelper.cs" />
     <Compile Include="Views\AnimationUtilityDemo.xaml.cs">
       <DependentUpon>AnimationUtilityDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoolListViewDemo.xaml.cs">
+      <DependentUpon>CoolListViewDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CoolGridViewDemo.xaml.cs">
+      <DependentUpon>CoolGridViewDemo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OldGridViewDemo.xaml.cs">
+      <DependentUpon>OldGridViewDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReorderPanelDemo.xaml.cs">
       <DependentUpon>ReorderPanelDemo.xaml</DependentUpon>
@@ -183,6 +193,18 @@
     <Page Include="Views\AnimationUtilityDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CoolListViewDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CoolGridViewDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OldGridViewDemo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\ReorderPanelDemo.xaml">
       <Generator>MSBuild:Compile</Generator>

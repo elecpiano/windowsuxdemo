@@ -68,9 +68,6 @@
 
             <GridView Visibility="Visible"
                 x:Name="itemGridView"
-                AutomationProperties.AutomationId="ItemGridView"
-                AutomationProperties.Name="Grouped Items"
-                Grid.RowSpan="2"
                 Padding="116,49,40,49"
                 ItemsSource="{Binding Source={StaticResource groupedItemsViewSource}}"
                 ItemTemplate="{StaticResource Standard250x250ItemTemplate}"
