@@ -20,6 +20,7 @@ namespace WindowsUXDemo.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             ShowPageTitle.Begin();
+            SunshineStory.Begin();
         }
 
         private void LoadSampleData()
