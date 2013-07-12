@@ -4,7 +4,7 @@
     xmlns:local="using:WindowsUXDemo.Common" 
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-    xmlns:utility="using:WindowsUXDemo.Utility"
+    xmlns:Utility="using:Utility"
     mc:Ignorable="d">
 
     <Style x:Key="HorizontalMenuButtonStyle" TargetType="Button">
@@ -134,13 +134,89 @@
         </Setter>
     </Style>
 
-    <Style TargetType="utility:Panorama">
+    <Style TargetType="Utility:Panorama">
         <Setter Property="IsHitTestVisible" Value="False"/>
         <Setter Property="ItemsPanel">
             <Setter.Value>
                 <ItemsPanelTemplate>
                     <Grid/>
                 </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!--XGridView-->
+    <Style x:Key="XGridView_ItemContainerStyle" TargetType="ContentControl">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="TabNavigation" Value="Local"/>
+        <Setter Property="IsHoldingEnabled" Value="True"/>
+        <Setter Property="Margin" Value="0,0,0,0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="RenderTransformOrigin" Value="0.5,0.5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl" >
+                    <Grid x:Name="rootGrid" Background="Transparent">
+                        <Grid.RenderTransform>
+                            <CompositeTransform/>
+                        </Grid.RenderTransform>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="DragStates">
+                                <VisualStateGroup.Transitions>
+                                    <VisualTransition GeneratedDuration="0:0:0.2"/>
+                                </VisualStateGroup.Transitions>
+                                <VisualState x:Name="NotDragging"/>
+                                <VisualState x:Name="Dragging">
+                                    <Storyboard>
+                                        <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="contentContainer"/>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <Grid x:Name="contentContainer" RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <ContentPresenter x:Name="contentPresenter" ContentTransitions="{TemplateBinding ContentTransitions}" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              Margin="{TemplateBinding Padding}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="Utility:XGridView">
+        <Setter Property="IsTabStop" Value="False"/>
+        <Setter Property="TabNavigation" Value="Once"/>
+        <Setter Property="ItemContainerStyle" Value="{StaticResource XGridView_ItemContainerStyle}"/>
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <Utility:XGridViewPanel/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ItemsControl">
+                    <Grid>
+                        <ItemsPresenter Padding="{TemplateBinding Padding}" Margin="0,0,0,0"/>
+
+                        <Grid x:Name="dragAgent" Visibility="Collapsed" Opacity="0.7" RenderTransformOrigin="0.5,0.5" 
+                              VerticalAlignment="Top" HorizontalAlignment="Left" IsHitTestVisible="False">
+                            <Grid.RenderTransform>
+                                <CompositeTransform/>
+                            </Grid.RenderTransform>
+                            <Utility:XGridViewItem x:Name="dragAgentContentPresenter" IsHitTestVisible="False"/>
+                        </Grid>
+
+                    </Grid>
+                </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>

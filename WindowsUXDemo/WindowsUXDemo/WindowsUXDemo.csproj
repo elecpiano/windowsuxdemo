@@ -125,16 +125,15 @@
       <DependentUpon>CoolPopupContainer.xaml</DependentUpon>
     </Compile>
     <Compile Include="Utility\CoolPopupContainer\CoolPopupContainerExtension.cs" />
+    <Compile Include="Utility\ImageButton.cs" />
     <Compile Include="Utility\Panorama.cs" />
     <Compile Include="Utility\UIHelper.cs" />
+    <Compile Include="Utility\XGridView\DrawableComponent.cs" />
+    <Compile Include="Utility\XGridView\XGridView.cs" />
+    <Compile Include="Utility\XGridView\XGridViewItem.cs" />
+    <Compile Include="Utility\XGridView\XGridViewPanel.cs" />
     <Compile Include="Views\AnimationUtilityDemo.xaml.cs">
       <DependentUpon>AnimationUtilityDemo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CoolListViewDemo.xaml.cs">
-      <DependentUpon>CoolListViewDemo.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CoolGridViewDemo.xaml.cs">
-      <DependentUpon>CoolGridViewDemo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\OldGridViewDemo.xaml.cs">
       <DependentUpon>OldGridViewDemo.xaml</DependentUpon>
@@ -164,6 +163,7 @@
   <ItemGroup>
     <Content Include="Assets\Cloud.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\RemoveButton.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
@@ -193,14 +193,6 @@
     <Page Include="Views\AnimationUtilityDemo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CoolListViewDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Views\CoolGridViewDemo.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\OldGridViewDemo.xaml">
       <Generator>MSBuild:Compile</Generator>

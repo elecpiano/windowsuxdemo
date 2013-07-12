@@ -1,4 +1,4 @@
-﻿<Page xmlns:Utility="using:WindowsUXDemo.Utility" 
+﻿<Page xmlns:Utility="using:Utility" 
     x:Class="WindowsUXDemo.Views.PanoramaDemo"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"

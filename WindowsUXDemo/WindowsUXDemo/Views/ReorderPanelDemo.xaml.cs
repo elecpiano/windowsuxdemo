@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using System.Collections.ObjectModel;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
@@ -14,6 +15,7 @@ namespace WindowsUXDemo.Views
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             ShowPageTitle.Begin();
+            LoadSampleData();
         }
 
         private void GoBack(object sender, RoutedEventArgs e)
@@ -21,19 +23,18 @@ namespace WindowsUXDemo.Views
             this.Frame.GoBack();
         }
 
-        private void oldGridViewButton_Click(object sender, RoutedEventArgs e)
+        private void LoadSampleData()
         {
-            this.Frame.Navigate(typeof(OldGridViewDemo));
-        }
+            ObservableCollection<int> items1 = new ObservableCollection<int>();
+            ObservableCollection<int> items2 = new ObservableCollection<int>();
 
-        private void coolListViewButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CoolListViewDemo));
-        }
-
-        private void coolGridViewButton_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(CoolGridViewDemo));
+            for (int i = 0; i < 10; i++)
+            {
+                items1.Add(i);
+                items2.Add(i);
+            }
+            oldListView.ItemsSource = items1;
+            xListView.ItemsSource = items2;
         }
     }
 }

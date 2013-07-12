@@ -33,7 +33,7 @@
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
-        <DataTemplate x:Key="gridViewItemTemplate">
+        <DataTemplate x:Key="MyItemTemplate">
             <Grid Width="200" Height="200" Background="#80000000">
                 <TextBlock Text="{Binding}" FontSize="90" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
             </Grid>
@@ -60,7 +60,7 @@
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
             <GridView x:Name="gridView"
                       Padding="116,49,40,49"
-                      ItemTemplate="{StaticResource gridViewItemTemplate}"
+                      ItemTemplate="{StaticResource MyItemTemplate}"
                       AllowDrop="True"
                       CanDragItems="True"
                       CanReorderItems="True">

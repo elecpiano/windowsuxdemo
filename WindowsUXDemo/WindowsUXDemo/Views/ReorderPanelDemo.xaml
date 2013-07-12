@@ -5,6 +5,7 @@
     xmlns:local="using:WindowsUXDemo.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Utility="using:Utility" 
     mc:Ignorable="d">
 	<Page.Resources>
 		<Storyboard x:Name="ShowPageTitle">
@@ -33,6 +34,11 @@
 				</EasingDoubleKeyFrame>
 			</DoubleAnimationUsingKeyFrames>
 		</Storyboard>
+        <DataTemplate x:Key="MyItemTemplate">
+            <Grid Width="200" Height="200" Background="#80000000" Margin="10">
+                <TextBlock Text="{Binding}" FontSize="90" Foreground="White" VerticalAlignment="Bottom" HorizontalAlignment="Right"/>
+            </Grid>
+        </DataTemplate>
     </Page.Resources>
 
     <Grid Style="{StaticResource PageBase}">
@@ -53,11 +59,13 @@
         </Grid>
 
         <Grid x:Name="bodyPanel" Margin="0,120,0,0">
-            <StackPanel VerticalAlignment="Center">
-                <Button x:Name="oldGridViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Old Ugly GridView" Click="oldGridViewButton_Click"/>
-                <Button x:Name="coolListViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Cool ListView" Background="#FF6F9FD8" Click="coolListViewButton_Click"/>
-                <Button x:Name="coolGridViewButton" Style="{StaticResource HorizontalSubMenuButtonStyle}" Content="Cool GridView" Background="#FF6F9FD8" Click="coolGridViewButton_Click"/>
-            </StackPanel>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <GridView x:Name="oldListView" ItemTemplate="{StaticResource MyItemTemplate}" AllowDrop="True" CanDragItems="True" CanReorderItems="True" Grid.Column="0"/>
+            <Utility:XGridView x:Name="xListView" ItemTemplate="{StaticResource MyItemTemplate}" IsInSettingMode="True" Grid.Column="1"/>
 
         </Grid>
     </Grid>

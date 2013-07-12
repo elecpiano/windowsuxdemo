@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace WindowsUXDemo.Utility
+namespace Utility
 {
     public sealed partial class CoolPopupContainer : UserControl
     {

@@ -4,7 +4,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Media;
 using System.Linq;
 
-namespace WindowsUXDemo.Utility
+namespace Utility
 {
     public static class UIHelper
     {
