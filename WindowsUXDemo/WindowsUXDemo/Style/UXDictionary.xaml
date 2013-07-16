@@ -217,4 +217,21 @@
         </Setter>
     </Style>
 
+    <!-- ScrollViewer -->
+    <Style x:Key="VerticalScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="HorizontalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="HorizontalScrollMode" Value="Disabled"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="VerticalScrollMode" Value="Auto"/>
+        <Setter Property="ZoomMode" Value="Disabled"/>
+    </Style>
+
+    <Style x:Key="HorizontalScrollViewerStyle" TargetType="ScrollViewer">
+        <Setter Property="VerticalScrollBarVisibility" Value="Disabled"/>
+        <Setter Property="VerticalScrollMode" Value="Disabled"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="HorizontalScrollMode" Value="Auto"/>
+        <Setter Property="ZoomMode" Value="Disabled"/>
+    </Style>
+    
 </ResourceDictionary>
